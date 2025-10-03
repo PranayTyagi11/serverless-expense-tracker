@@ -1,7 +1,7 @@
 # Expense Tracker - Full Documentation
 
 ## Live Demo
-[View Live Application](https://inquisitive-maamoul-134d2f.netlify.app)
+[View Live Application](https://expense-tracker-pranay.netlify.app)
 
 ## Application Screenshots
 
