@@ -6,25 +6,21 @@
 ## Application Screenshots
 
 ### User Authentication
-![Registration Page](./screenshots/1-registration.png)
+![Registration Page](./screenshots/registration-screenshots/form.png)
 *User registration with form validation*
 
-![Login Page](./screenshots/2-login.png)
+![Login Page](./screenshots/login.png)
 *Secure login interface*
 
 ### Main Application
-![Dashboard](./screenshots/3-dashboard.png)
+![Dashboard](./screenshots/dashboard.png)
 *Expense dashboard with category filtering*
 
-![Add Expense](./screenshots/4-add-expense.png)
+![Add Expense](./screenshots/add-expense.png)
 *Add expense form with category dropdown*
 
-![Categories](./screenshots/5-categories.png)
+![Categories](./screenshots/categories.png)
 *Available expense categories*
-
-### Mobile Experience
-![Mobile View](./screenshots/6-mobile-view.png)
-*Fully responsive mobile interface*
 
 ## Documentation
 - [Architecture Overview](./ARCHITECTURE.md)
