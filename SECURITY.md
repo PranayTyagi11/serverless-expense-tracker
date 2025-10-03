@@ -183,7 +183,7 @@ Please report security vulnerabilities via:
 - **Disclosure Timeline**: Coordinated disclosure based on severity  
 
 ## Version History
-- **v1.0**: Initial security model (September 2024)  
+- **v1.0**: Initial security model (September 2025)  
 - **Updates**: Regular reviews with infrastructure changes  
 
 ---
