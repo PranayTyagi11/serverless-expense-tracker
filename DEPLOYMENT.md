@@ -234,8 +234,7 @@ infrastructure/               # Terraform configurations
 - IAM (Permissions)  
 
 ### Cost Estimation
-- **Free Tier**: Most services covered under AWS Free Tier  
-- **Production**: ~$5-10/month for low usage  
+- **Free Tier**: Services covered under Free Tier   
 - **Monitoring**: CloudWatch included in minimal usage  
 
 ## Testing
