@@ -8,12 +8,12 @@
 ## Infrastructure Deployment
 
 ### Initial Setup
-```bash
+
 cd infrastructure
 terraform init
 terraform plan
 terraform apply
-```
+
 
 This creates:
 - S3 bucket for frontend hosting
@@ -24,11 +24,11 @@ This creates:
 ### Frontend Deployment
 
 #### Manual Deployment
-```bash
+
 cd frontend
 npm run build
 aws s3 sync build/ s3://your-bucket-name --delete
-```
+
 
 #### Automated Deployment (CI/CD)
 - Push to main branch triggers automatic deployment  
@@ -38,12 +38,12 @@ aws s3 sync build/ s3://your-bucket-name --delete
 ### Backend Deployment
 
 #### Manual Deployment
-```bash
+
 cd backend
 pip install -r requirements.txt -t .
 zip -r lambda.zip .
 aws lambda update-function-code --function-name ExpensesHandler --zip-file fileb://lambda.zip
-```
+
 
 #### Automated Deployment (CI/CD)
 - Push to main branch triggers automatic deployment  
@@ -53,16 +53,16 @@ aws lambda update-function-code --function-name ExpensesHandler --zip-file fileb
 ### Environment Variables
 
 #### Frontend (.env)
-```env
+
 REACT_APP_COGNITO_USER_POOL_ID=us-east-1_xxx
 REACT_APP_COGNITO_CLIENT_ID=xxx
 REACT_APP_API_GATEWAY_URL=https://xxx.execute-api.ca-central-1.amazonaws.com
-```
+
 
 #### Backend (Lambda Environment)
-```env
+
 EXPENSES_TABLE=Expenses
-```
+
 
 #### GitHub Secrets Required
 - `AWS_ACCESS_KEY_ID`  
@@ -86,25 +86,25 @@ EXPENSES_TABLE=Expenses
 # API Documentation
 
 ## Base URL
-```
+
 https://your-api-gateway-url.execute-api.ca-central-1.amazonaws.com
-```
+
 
 ## Authentication
 All endpoints require JWT token in Authorization header:
 
-```
+
 Authorization: Bearer <cognito_jwt_token>
-```
+
 
 ## Endpoints
 
 ### Get All Expenses
-```http
+http
 GET /expenses
-```
+
 **Response:**
-```json
+
 [
   {
     "expenseId": "uuid",
@@ -116,14 +116,14 @@ GET /expenses
     "description": "Weekly grocery shopping"
   }
 ]
-```
+
 
 ### Create Expense
-```http
+http
 POST /expenses
-```
+
 **Body:**
-```json
+
 {
   "title": "Dinner",
   "amount": 45.00,
@@ -131,52 +131,52 @@ POST /expenses
   "category": "Food & Dining",
   "description": "Restaurant dinner with friends"
 }
-```
+
 
 ### Get Single Expense
-```http
+http
 GET /expenses/{expenseId}
-```
+
 
 ### Update Expense
-```http
+http
 PUT /expenses/{expenseId}
-```
+
 **Body:** Same as create
 
 ### Delete Expense
-```http
+http
 DELETE /expenses/{expenseId}
-```
+
 
 ### Error Responses
 **400 - Bad Request**
-```json
+
 {
   "message": "Invalid input data"
 }
-```
+
 
 **401 - Unauthorized**
-```json
+
 {
   "message": "Unauthorized - Invalid token"
 }
-```
+
 
 **404 - Not Found**
-```json
+
 {
   "message": "Expense not found"
 }
-```
+
 
 **500 - Internal Server Error**
-```json
+
 {
   "message": "Internal server error"
 }
-```
+
 
 ### Data Types
 **Expense Object**
@@ -197,18 +197,17 @@ DELETE /expenses/{expenseId}
 ## Local Development
 
 ### Frontend Setup
-```bash
 cd frontend
 npm install
 npm start
-```
+
 App runs on `http://localhost:3000`
 
 ### Backend Development
-```bash
+
 cd backend
 # Test Lambda function locally with mock events
-```
+
 
 ## Production Deployment
 
@@ -219,12 +218,12 @@ cd backend
 - **CI/CD**: Set up GitHub Secrets in each repository  
 
 ### Repository Structure
-```
+
 expense-tracker-frontend/     # React application
 expense-tracker-backend/      # Lambda functions
 expense-tracker-docs/         # This documentation
 infrastructure/               # Terraform configurations
-```
+
 
 ### Required AWS Services
 - S3 (Frontend hosting)  
@@ -242,10 +241,9 @@ infrastructure/               # Terraform configurations
 ## Testing
 
 ### Frontend Tests
-```bash
 cd frontend
 npm test
-```
+
 
 ### API Testing
 Use Postman or `curl` with valid JWT tokens  

@@ -6,7 +6,7 @@
 ## Application Screenshots
 
 ### User Authentication
-![Registration Page](./screenshots/registration-screenshots/form.png)
+![Registration Page](./screenshots/registration-screenshots/registration.png)
 *User registration with form validation*
 
 ![Login Page](./screenshots/login.png)

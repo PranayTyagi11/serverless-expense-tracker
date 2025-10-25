@@ -158,29 +158,6 @@ Backend Deployment:
 - Infrastructure as Code with Terraform  
 - Regular dependency updates  
 
-**Recommended for Production**  
-- Web Application Firewall (WAF)  
-- AWS Config for compliance monitoring  
-- Regular security audits  
-- Backup and disaster recovery testing  
-- Security headers for S3 website  
-- Certificate Manager for custom domains  
-
-## Contact & Reporting
-
-### Security Contacts
-- **Primary**: Project maintainer  
-- **Backup**: AWS support for infrastructure issues  
-
-### Vulnerability Reporting
-Please report security vulnerabilities via:  
-- **GitHub Issues** (for non-sensitive reports)  
-- **Direct email** to maintainer (for sensitive security issues)  
-
-### Response SLA
-- **Initial Response**: 24 hours for security reports  
-- **Patch Deployment**: 7 days for critical vulnerabilities  
-- **Disclosure Timeline**: Coordinated disclosure based on severity  
 
 ## Version History
 - **v1.0**: Initial security model (September 2025)  
