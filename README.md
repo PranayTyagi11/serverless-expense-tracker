@@ -1,8 +1,5 @@
 # Expense Tracker - Full Documentation
 
-## Live Demo
-[View Live Application](https://expense-tracker-pranay.netlify.app)
-
 ## Application Screenshots
 
 ### User Authentication
