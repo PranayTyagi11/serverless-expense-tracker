@@ -9,41 +9,26 @@
 -   **Terraform** (v1.6 or higher) for infrastructure management
 -   **AWS CLI** configured with appropriate credentials
 
-## Repository Structure
-
-expense-tracker/ ├── frontend/ \# React application │ ├── src/ │ ├──
-public/ │ └── package.json ├── backend/ \# Lambda functions │ ├──
-lambda_function.py │ └── requirements.txt ├── infrastructure/ \#
-Terraform configurations │ ├── main.tf │ ├── lambda.tf │ └── database.tf
-└── docs/ \# Documentation ├── ARCHITECTURE.md ├── SECURITY.md └──
-DEPLOYMENT.md
-
-## Local Development Setup
-
-### Frontend Development
-
-\`\`\`bash \# Clone the repository git clone `<repository-url>`{=html}
-cd expense-tracker/frontend
-
 # Install dependencies
 
 npm install
 
 # Start development server
 
-npm start \`\`\` The application will be available at
+npm start 
+
+The application will be available at
 http://localhost:3000
 
 ### Backend Development
 
-\`\`\`bash cd expense-tracker/backend
+bash cd expense-tracker/backend
 
 # Test Lambda function locally (optional)
 
 # You can test Lambda logic with mock events
 
 python3 -c "import lambda_function; print('Backend imports working')"
-\`\`\`
 
 ### Environment Configuration
 
@@ -51,22 +36,22 @@ python3 -c "import lambda_function; print('Backend imports working')"
 
 Create `frontend/.env` file:
 
-\`\`\`env REACT_APP_COGNITO_USER_POOL_ID=ca-central-1_xxxxxxxxx
+env REACT_APP_COGNITO_USER_POOL_ID=ca-central-1_xxxxxxxxx
 REACT_APP_COGNITO_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxx
 REACT_APP_API_GATEWAY_URL=https://xxxxxxxxxx.execute-api.ca-central-1.amazonaws.com
-REACT_APP_REGION=ca-central-1 \`\`\`
+REACT_APP_REGION=ca-central-1
 
 #### Backend Environment Variables
 
 Configure in AWS Lambda Console:
 
-\`\`\`env EXPENSES_TABLE=Expenses \`\`\`
+env EXPENSES_TABLE=Expenses
 
 ## Infrastructure Deployment
 
 ### Initial Infrastructure Setup
 
-\`\`\`bash cd infrastructure
+bash cd infrastructure
 
 # Initialize Terraform
 
@@ -78,7 +63,9 @@ terraform plan
 
 # Deploy infrastructure
 
-terraform apply \`\`\` This will create: - S3 bucket for frontend
+terraform apply
+
+This will create: - S3 bucket for frontend
 hosting - DynamoDB table for expenses - Lambda function for API logic -
 IAM roles and policies - API Gateway endpoints
 
@@ -86,8 +73,8 @@ IAM roles and policies - API Gateway endpoints
 
 Create `terraform.tfvars` file:
 
-\`\`\`hcl aws_region = "ca-central-1" project_name = "expense-tracker"
-environment = "development" \`\`\`
+hcl aws_region = "ca-central-1" project_name = "expense-tracker"
+environment = "development"
 
 ## Authentication Setup
 
@@ -127,13 +114,13 @@ In each repository, configure the following secrets: -
 
 ### Frontend Testing
 
-\`\`\`bash cd frontend npm test \`\`\`
+bash cd frontend npm test
 
 ### API Testing
 
 Use tools like Postman or curl to test endpoints:
 
-\`\`\`bash \# Get all expenses (requires JWT token) curl -H
+bash \# Get all expenses (requires JWT token) curl -H
 "Authorization: Bearer `<JWT_TOKEN>`{=html}"
 https://your-api-gateway-url/expenses
 
@@ -142,7 +129,7 @@ https://your-api-gateway-url/expenses
 curl -X POST -H "Authorization: Bearer `<JWT_TOKEN>`{=html}" -H
 "Content-Type: application/json" -d
 '{"title":"Test","amount":25.50,"date":"2024-01-15"}'
-https://your-api-gateway-url/expenses \`\`\`
+https://your-api-gateway-url/expenses 
 
 ## Production Deployment Checklist
 
@@ -174,8 +161,8 @@ https://your-api-gateway-url/expenses \`\`\`
 
 #### Frontend Build Failures
 
-\`\`\`bash \# Clear node_modules and reinstall rm -rf node_modules
-package-lock.json npm install \`\`\`
+bash \# Clear node_modules and reinstall rm -rf node_modules
+package-lock.json npm install 
 
 #### API Gateway CORS Errors
 
@@ -221,19 +208,4 @@ package-lock.json npm install \`\`\`
 -   Configure Lambda appropriate memory and timeout
 -   Enable DynamoDB auto-scaling
 -   Monitor usage with AWS Cost Explorer
-
-#### Issue Reporting
-
--   Check existing documentation
--   Review CloudWatch logs for errors
--   Create issue in GitHub repository with:
-    -   Error messages
-    -   Steps to reproduce
-    -   Environment details
-
-#### Community Support
-
--   GitHub Discussions
--   AWS Developer Forums
--   Terraform Community
 
