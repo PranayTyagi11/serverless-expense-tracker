@@ -155,44 +155,6 @@ https://your-api-gateway-url/expenses
 -   CRUD operations functional
 -   Error handling verified
 
-## Troubleshooting
-
-### Common Issues
-
-#### Frontend Build Failures
-
-bash \# Clear node_modules and reinstall rm -rf node_modules
-package-lock.json npm install 
-
-#### API Gateway CORS Errors
-
--   Verify CORS configuration in API Gateway
--   Check frontend API URL configuration
--   Ensure proper headers in requests
-
-#### Lambda Permission Errors
-
--   Verify IAM role permissions
--   Check DynamoDB table name in environment variables
--   Review CloudWatch logs for detailed errors
-
-#### Authentication Issues
-
--   Confirm Cognito User Pool configuration
--   Verify JWT token validity
--   Check token expiration times
-
-### Debugging Tools
-
--   **CloudWatch Logs**
-    -   Lambda function execution logs
-    -   API Gateway access logs
-    -   Error tracking and monitoring
--   **Browser Developer Tools**
-    -   Network tab for API requests
-    -   Console for JavaScript errors
-    -   Application tab for storage inspection
-
 ## Cost Management
 
 ### AWS Free Tier
