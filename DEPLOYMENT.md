@@ -217,14 +217,6 @@ cd backend
 - **Backend**: Deploy Lambda function manually once  
 - **CI/CD**: Set up GitHub Secrets in each repository  
 
-### Repository Structure
-
-expense-tracker-frontend/     # React application
-expense-tracker-backend/      # Lambda functions
-expense-tracker-docs/         # This documentation
-infrastructure/               # Terraform configurations
-
-
 ### Required AWS Services
 - S3 (Frontend hosting)  
 - Lambda (Backend logic)  
