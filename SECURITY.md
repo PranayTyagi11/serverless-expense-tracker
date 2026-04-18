@@ -99,24 +99,6 @@ Backend Deployment:
   - Lambda function updates are atomic
   - Rollback capability via Lambda versions
 ```
-
-## Data Privacy & Compliance
-
-### Data Classification
-- **Personal Data**: User emails (stored in Cognito only)  
-- **Financial Data**: Expense amounts and descriptions  
-- **Metadata**: Dates, categories, user IDs  
-
-### Data Retention
-- **User Data**: Retained until user account deletion  
-- **Logs**: CloudWatch logs retained for 30 days  
-- **Backups**: Manual backup process recommended for production  
-
-### GDPR & Compliance Considerations
-- **Right to Erasure**: Users can delete accounts via Cognito  
-- **Data Portability**: Export functionality available via API  
-- **Privacy by Design**: No unnecessary data collection  
-
 ## Monitoring & Incident Response
 
 ### Logging & Monitoring
@@ -129,7 +111,6 @@ Backend Deployment:
 
 **Containment**:  
 - Revoke compromised IAM credentials immediately  
-- Block suspicious IP addresses if needed  
 
 **Investigation**:  
 - Review CloudWatch logs for unusual patterns  
@@ -158,11 +139,4 @@ Backend Deployment:
 - Infrastructure as Code with Terraform  
 - Regular dependency updates  
 
-
-## Version History
-- **v1.0**: Initial security model (September 2025)  
-- **Updates**: Regular reviews with infrastructure changes  
-
 ---
-
-This security model is reviewed and updated with each significant change to the application architecture or infrastructure.
