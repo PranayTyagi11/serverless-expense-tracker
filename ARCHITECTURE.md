@@ -3,22 +3,6 @@
 ## Overview
 A full-stack serverless expense tracking application built on AWS with React frontend.
 
-## System Architecture
-┌─────────────────┐ ┌──────────────────┐ ┌─────────────────┐
-│ React SPA │───▶│ API Gateway │───▶│ Lambda │
-│ (S3 Hosted) │ │ (REST API) │ │ (Python) │
-└─────────────────┘ └──────────────────┘ └─────────┬───────┘
-│ │ │
-│ │ ▼
-│ │ ┌─────────────────┐
-└───────────────────────┼──────────────│ DynamoDB │
-│ │ (Expenses) │
-▼ └─────────────────┘
-┌─────────────────┐
-│ Cognito │
-│ (Auth) │
-└─────────────────┘
-
 ## Components
 
 ### Frontend
