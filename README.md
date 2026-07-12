@@ -21,7 +21,6 @@
 
 ## Documentation
 - [Architecture Overview](./ARCHITECTURE.md)
-- [Security Model](./SECURITY.md)
 - [Deployment Guide](./DEPLOYMENT.md)
 - [API Documentation](./API.md)
 - [Setup Guide](./SETUP.md)
